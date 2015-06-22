@@ -1,12 +1,22 @@
 package com.ninja_squad.geektic.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.test.context.ContextConfiguration;
 
 import com.ninja_squad.geektic.core.Geek;
 
+@Repository
 public class GeekDao
 {
-
+	@PersistenceContext
 	public EntityManager em;
 
 	/**
@@ -14,9 +24,13 @@ public class GeekDao
 	 * 
 	 * @param em
 	 */
-	public GeekDao(EntityManager em)
+//	public GeekDao(EntityManager em)
+//	{
+//		this.em = em;
+//	}
+	
+	public GeekDao()
 	{
-		this.em = em;
 	}
 
 	public Geek findById(Long id)
@@ -28,5 +42,9 @@ public class GeekDao
 	{
 		em.persist(g);
 	}
-
+	
+    public List<Geek> findAll(){
+        String query = "SELECT g FROM geek g";
+        return em.createQuery(query, Geek.class).getResultList();
+    }
 }

@@ -1,0 +1,14 @@
+17:12:10,189 DEBUG main hibernate.SQL:109 - insert into geek (id, adrmail, genre, nom, prenom) values (default, ?, ?, ?, ?)
+17:12:10,195 ERROR main spi.SqlExceptionHelper:146 - DEFAULT keyword cannot be used as column has no DEFAULT
+17:13:58,248 DEBUG main hibernate.SQL:109 - insert into geek (id, adrmail, genre, nom, prenom) values (default, ?, ?, ?, ?)
+17:13:58,264 ERROR main spi.SqlExceptionHelper:146 - DEFAULT keyword cannot be used as column has no DEFAULT
+17:14:59,883 DEBUG main hibernate.SQL:109 - insert into geek (id, adrmail, genre, nom, prenom) values (default, ?, ?, ?, ?)
+17:14:59,891 ERROR main spi.SqlExceptionHelper:146 - DEFAULT keyword cannot be used as column has no DEFAULT
+17:15:14,235 DEBUG main hibernate.SQL:109 - insert into geek (id, adrmail, genre, nom, prenom) values (default, ?, ?, ?, ?)
+17:15:14,251 ERROR main spi.SqlExceptionHelper:146 - DEFAULT keyword cannot be used as column has no DEFAULT
+17:45:50,464 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_0_, geek0_.adrmail as adrmail2_2_0_, geek0_.genre as genre3_2_0_, geek0_.nom as nom4_2_0_, geek0_.prenom as prenom5_2_0_, (select Count(*) from audit join geek0_.geek on (audit.geek = geek.id) where geek.id = geek0_.id) as formula0_0_ from geek geek0_ where geek0_.id=?
+17:45:50,569 ERROR main spi.SqlExceptionHelper:146 - unexpected token: SELECT
+17:53:49,735 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_0_, geek0_.adrmail as adrmail2_2_0_, geek0_.genre as genre3_2_0_, geek0_.nom as nom4_2_0_, geek0_.prenom as prenom5_2_0_, (select Count(*) from audit join geek0_.geek on (audit.geek = geek.id) where geek.id = geek0_.id) as formula0_0_ from geek geek0_ where geek0_.id=?
+17:53:49,846 ERROR main spi.SqlExceptionHelper:146 - unexpected token: SELECT
+17:54:54,459 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_0_, geek0_.adrmail as adrmail2_2_0_, geek0_.genre as genre3_2_0_, geek0_.nom as nom4_2_0_, geek0_.prenom as prenom5_2_0_, (select Count(*) from audit join geek0_.geek on (audit.geek = geek.id) where geek.id = geek0_.id) as formula0_0_ from geek geek0_ where geek0_.id=?
+17:54:54,569 ERROR main spi.SqlExceptionHelper:146 - unexpected token: SELECT

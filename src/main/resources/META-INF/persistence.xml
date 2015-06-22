@@ -9,7 +9,7 @@
 		<class>com.ninja_squad.geektik.core.CentreInteret</class>
 		<properties>
 			<property name="hibernate.show_sql" value="true"/>
-			<property name="javax.persistence.jdbc.url"	value="jdbc:hsqldb:hsql://localhost/GEEKTIK"/>
+			<property name="javax.persistence.jdbc.url"	value="jdbc:hsqldb:hsql://localhost/GEEKTIC"/>
 			<property name="javax.persistence.jdbc.user" value="sa"/>
 			<property name="javax.persistence.jdbc.password" value=""/>
 			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>

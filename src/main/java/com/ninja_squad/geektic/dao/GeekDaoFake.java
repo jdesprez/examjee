@@ -6,7 +6,7 @@ import com.ninja_squad.geektic.core.CentreInteret;
 import com.ninja_squad.geektic.core.Geek;
 import com.ninja_squad.geektic.core.Genre;
 
-public class GeekDaoTest implements IGeekDao
+public class GeekDaoFake implements IGeekDao
 {
 
 	@Override
