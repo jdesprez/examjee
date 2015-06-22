@@ -1,0 +1,6 @@
+        <h1>List des geeks : </h1>
+        
+
+  <div ng-repeat="geek in geeks | filter:query | orderBy:orderProp">
+    <li>{{geek.nom}}</li>
+  </div>

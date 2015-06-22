@@ -4,9 +4,16 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="GEEKTIC" transaction-type="RESOURCE_LOCAL">
-
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.ninja_squad.geektik.core.Geek</class>
+		<class>com.ninja_squad.geektik.core.CentreInteret</class>
 		<properties>
 			<property name="hibernate.show_sql" value="true"/>
+			<property name="javax.persistence.jdbc.url"	value="jdbc:hsqldb:hsql://localhost/GEEKTIK"/>
+			<property name="javax.persistence.jdbc.user" value="sa"/>
+			<property name="javax.persistence.jdbc.password" value=""/>
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
 		</properties>
 	</persistence-unit>
 </persistence>

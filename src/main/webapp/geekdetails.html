@@ -1,0 +1,12 @@
+        <h1>Fiche detaillee de {{geek.id}}</h1>
+        
+        <li>Nom : {{geek.nom}}</li>
+        <li>Prenom : {{geek.prenom}}</li>
+        <li>Adresse mail : {{geek.adrMail}}</li>
+        <li>Sexe : {{geek.genre}}</li>
+        <li>Cette page a ete consultee {{geek.consult}} fois</li>
+
+<p>Les centres d'interets de ce geek sont : </p>
+  <div ng-repeat="ci in geek.listInterets | filter:query | orderBy:orderProp">
+    <li> - {{ci.nom}}</li>
+  </div>
