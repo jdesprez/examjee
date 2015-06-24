@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ninja_squad.geektic.core.Geek;
+import com.ninja_squad.geektic.dao.GeekDao;
 import com.ninja_squad.geektic.dao.GeekDaoFake;
 import com.ninja_squad.geektic.dao.IGeekDao;
 
@@ -19,12 +20,13 @@ import com.ninja_squad.geektic.dao.IGeekDao;
 @RequestMapping("/api/geek")
 public class GeekService
 {
-	//@Autowired
+	@Autowired
 	public IGeekDao geekDao;
 	
-	GeekService()
+	public GeekService()
 	{
-		geekDao = new GeekDaoFake();
+		//geekDao = new GeekDaoFake();
+		//geekDao = new GeekDao();
 	}
 	
 	public boolean createGeek(Geek g)
@@ -39,6 +41,7 @@ public class GeekService
 	@RequestMapping(value="/{geekId}", method = GET)
 	public Geek findGeek(@PathVariable("geekId") long id) 
 	{
+		System.out.print("findGeek");
 		return geekDao.findById(id);
 	}
 

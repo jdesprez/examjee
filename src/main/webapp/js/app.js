@@ -29,17 +29,6 @@ app.controller('GeeksCtrl', function($scope, $http) {
 	})
 });
 
-// app.controller('GeekCtrl',[ '$scope', '$routeParams', '$http',
-// function($scope, $routeParams, $http) {
-// $scope.geekid = $routeParams.geekid
-//
-// $http.get('api/listci').success(function(listGeeksDisplay) {
-// $scope.centreinterets = listGeeksDisplay
-// })
-//					
-// }
-// ]);
-
 app.controller('GeekCtrl', [
 		'$scope',
 		'$routeParams',
@@ -50,3 +39,14 @@ app.controller('GeekCtrl', [
 						$scope.geek = listGeeksDisplay
 					})
 		} ]);
+
+//app.controller('GeekCtrl',[ '$scope', '$routeParams', '$http',
+//function($scope, $routeParams, $http) {
+//$scope.geekid = $routeParams.geekid
+//
+//$http.get('api/listci').success(function(listGeeksDisplay) {
+//$scope.centreinterets = listGeeksDisplay
+//})
+//					
+//}
+//]);

@@ -44,43 +44,51 @@ public class ExampleDaoTest extends BaseDaoTest {
 		assertEquals(1L, g.getId().longValue());
     }
     
-    @Test
-    public void insertTest() {
-		Geek g = new Geek("Nom", "Prenom", "toto@gmail.com", Genre.HOMME);
-
-		g.setId(42L);
-		
-		CentreInteret ci1 = new CentreInteret();
-		ci1.setNom("JAVA");
-		CentreInteret ci2 = new CentreInteret();
-		ci2.setNom("C#");
-		CentreInteret ci3 = new CentreInteret();
-		ci3.setNom("Archi N-Tiers");
-
-		ArrayList<CentreInteret> listRet = new ArrayList<CentreInteret>();
-
-		listRet.add(ci1);
-		listRet.add(ci2);
-		listRet.add(ci3);
-
-		g.setListInterets(listRet);
-		
-		// on enregistre en BDD
-		exampleDao.persist(g);
-		
-		// on essaie de le recup
-		Geek g2 = exampleDao.findById(42L);
-		
-		assertEquals(42L, g2.getId().longValue());
-    }
+//    @Test
+//    public void insertTest() {
+//		Geek g = new Geek("Nom", "Prenom", "toto@gmail.com", Genre.HOMME);
+//
+//		g.setId(42L);
+//		
+//		CentreInteret ci1 = new CentreInteret();
+//		ci1.setNom("JAVA");
+//		CentreInteret ci2 = new CentreInteret();
+//		ci2.setNom("C#");
+//		CentreInteret ci3 = new CentreInteret();
+//		ci3.setNom("Archi N-Tiers");
+//
+//		ArrayList<CentreInteret> listRet = new ArrayList<CentreInteret>();
+//
+//		listRet.add(ci1);
+//		listRet.add(ci2);
+//		listRet.add(ci3);
+//
+//		g.setListInterets(listRet);
+//		
+//		// on enregistre en BDD
+//		exampleDao.persist(g);
+//		
+//		// on essaie de le recup
+//		Geek g2 = exampleDao.findById(42L);
+//		
+//		assertEquals(42L, g2.getId().longValue());
+//    }
     
     @Test
-    public void testFindAll() {
-        List<Long> expected = Arrays.asList(1L, 2L);
-        Collections.sort(expected);
-        List<Geek> response = exampleDao.findAll();
-        Collections.sort(response);
-
-        assertEquals(expected, response);
+    public void testFindAll()
+    {
+    	List<Long> expected = new ArrayList<>();
+    	expected.add(1L);
+    	expected.add(2L);
+    	Collections.sort(expected);
+    	
+    	List<Geek> listGeeks = exampleDao.findAll();
+    	List<Long> response = new ArrayList<>();
+    	for(Geek g : listGeeks)
+    		response.add(g.getId());
+    	Collections.sort(response);
+    	
+    	assertEquals(expected, response);
+    	
     }
 }

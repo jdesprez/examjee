@@ -26,13 +26,13 @@ public class GeekDaoFake implements IGeekDao
 			CentreInteret ci3 = new CentreInteret();
 			ci3.setNom("Archi N-Tiers");
 
-			ArrayList<CentreInteret> listRet = new ArrayList<CentreInteret>();
-
-			listRet.add(ci1);
-			listRet.add(ci2);
-			listRet.add(ci3);
-
-			g.setListInterets(listRet);
+//			ArrayList<CentreInteret> listRet = new ArrayList<CentreInteret>();
+//
+//			listRet.add(ci1);
+//			listRet.add(ci2);
+//			listRet.add(ci3);
+//
+//			g.setListInterets(listRet);
 		}
 		return g;
 	}

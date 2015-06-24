@@ -14,7 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import com.ninja_squad.geektic.core.Geek;
 
 @Repository
-public class GeekDao
+public class GeekDao implements IGeekDao
 {
 	@PersistenceContext
 	public EntityManager em;

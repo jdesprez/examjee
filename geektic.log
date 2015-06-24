@@ -12,3 +12,16 @@
 17:53:49,846 ERROR main spi.SqlExceptionHelper:146 - unexpected token: SELECT
 17:54:54,459 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_0_, geek0_.adrmail as adrmail2_2_0_, geek0_.genre as genre3_2_0_, geek0_.nom as nom4_2_0_, geek0_.prenom as prenom5_2_0_, (select Count(*) from audit join geek0_.geek on (audit.geek = geek.id) where geek.id = geek0_.id) as formula0_0_ from geek geek0_ where geek0_.id=?
 17:54:54,569 ERROR main spi.SqlExceptionHelper:146 - unexpected token: SELECT
+08:34:20,219 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_0_, geek0_.adrmail as adrmail2_2_0_, geek0_.genre as genre3_2_0_, geek0_.nom as nom4_2_0_, geek0_.prenom as prenom5_2_0_, (select Count(*) from audit join geek0_.geek on (audit.geek = geek.id) where geek.id = geek0_.id) as formula0_0_ from geek geek0_ where geek0_.id=?
+08:34:20,324 ERROR main spi.SqlExceptionHelper:146 - unexpected token: SELECT
+08:43:20,950 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_, geek0_.adrmail as adrmail2_2_, geek0_.genre as genre3_2_, geek0_.nom as nom4_2_, geek0_.prenom as prenom5_2_, (select Count(*) from audit join geek0_.geek on (audit.geek = geek.id) where geek.id = geek0_.id) as formula0_ from geek geek0_
+08:43:21,076 ERROR main spi.SqlExceptionHelper:146 - unexpected token: SELECT
+08:44:44,499 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_, geek0_.adrmail as adrmail2_2_, geek0_.genre as genre3_2_, geek0_.nom as nom4_2_, geek0_.prenom as prenom5_2_ from geek geek0_
+08:48:30,918 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_, geek0_.adrmail as adrmail2_2_, geek0_.genre as genre3_2_, geek0_.nom as nom4_2_, geek0_.prenom as prenom5_2_ from geek geek0_
+08:48:31,259 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_0_, geek0_.adrmail as adrmail2_2_0_, geek0_.genre as genre3_2_0_, geek0_.nom as nom4_2_0_, geek0_.prenom as prenom5_2_0_ from geek geek0_ where geek0_.id=?
+08:50:41,732 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_, geek0_.adrmail as adrmail2_2_, geek0_.genre as genre3_2_, geek0_.nom as nom4_2_, geek0_.prenom as prenom5_2_ from geek geek0_
+08:50:42,096 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_0_, geek0_.adrmail as adrmail2_2_0_, geek0_.genre as genre3_2_0_, geek0_.nom as nom4_2_0_, geek0_.prenom as prenom5_2_0_ from geek geek0_ where geek0_.id=?
+08:51:20,520 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_, geek0_.adrmail as adrmail2_2_, geek0_.genre as genre3_2_, geek0_.nom as nom4_2_, geek0_.prenom as prenom5_2_ from geek geek0_
+08:51:20,771 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_0_, geek0_.adrmail as adrmail2_2_0_, geek0_.genre as genre3_2_0_, geek0_.nom as nom4_2_0_, geek0_.prenom as prenom5_2_0_ from geek geek0_ where geek0_.id=?
+08:56:43,636 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_, geek0_.adrmail as adrmail2_2_, geek0_.genre as genre3_2_, geek0_.nom as nom4_2_, geek0_.prenom as prenom5_2_ from geek geek0_
+08:56:43,870 DEBUG main hibernate.SQL:109 - select geek0_.id as id1_2_0_, geek0_.adrmail as adrmail2_2_0_, geek0_.genre as genre3_2_0_, geek0_.nom as nom4_2_0_, geek0_.prenom as prenom5_2_0_ from geek geek0_ where geek0_.id=?

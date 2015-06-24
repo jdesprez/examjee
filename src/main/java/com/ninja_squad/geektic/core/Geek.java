@@ -11,12 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
-import org.hibernate.annotations.Formula;
-
-@Entity
-@Table(name="geek")
+@Entity(name="geek")
+//@Table(name="geek")
 public class Geek
 {
 	@Id
@@ -29,17 +26,15 @@ public class Geek
 	String prenom;
 	@Column(name="adrmail")
 	String adrMail;
-	@ManyToMany
-	@JoinTable(name="centreinteretgeek",
-	joinColumns = @JoinColumn(name="idgeek"),
-	inverseJoinColumns = @JoinColumn(name="idcentreinteret"))
-	List<CentreInteret> listInterets;
+//	@ManyToMany
+//	@JoinTable(name="centreinteretgeek",
+//	joinColumns = @JoinColumn(name="idgeek"),
+//	inverseJoinColumns = @JoinColumn(name="idcentreinteret"))
+//	List<CentreInteret> listInterets;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "genre")
 	Genre genre;	
-	@Formula("(select Count(*) from audit join geek on (audit.geek = geek.id) where geek.id = id)")
-	private int consult; // nombre de fois que le profil de ce geek à été consulté
 	
 	public Geek()
 	{
@@ -58,30 +53,15 @@ public class Geek
 		this.genre = genre;
 	}
 	
-	public boolean addCentreInteret(CentreInteret ci)
-	{
-		return listInterets.add(ci);
-	}
-	
-	public boolean removeCentreInteret(CentreInteret ci)
-	{
-		return listInterets.remove(ci);
-	}
-	
-	public void incrementConsult()
-	{
-		consult++;
-	}
-	
-	public int getConsult()
-	{
-		return consult;
-	}
-
-	public void setConsult(int consult)
-	{
-		this.consult = consult;
-	}
+//	public boolean addCentreInteret(CentreInteret ci)
+//	{
+//		return listInterets.add(ci);
+//	}
+//	
+//	public boolean removeCentreInteret(CentreInteret ci)
+//	{
+//		return listInterets.remove(ci);
+//	}
 
 	public Long getId()
 	{
@@ -123,15 +103,15 @@ public class Geek
 		this.adrMail = adrMail;
 	}
 
-	public List<CentreInteret> getListInterets()
-	{
-		return listInterets;
-	}
-
-	public void setListInterets(List<CentreInteret> listInterets)
-	{
-		this.listInterets = listInterets;
-	}
+//	public List<CentreInteret> getListInterets()
+//	{
+//		return listInterets;
+//	}
+//
+//	public void setListInterets(List<CentreInteret> listInterets)
+//	{
+//		this.listInterets = listInterets;
+//	}
 
 	public Genre getGenre()
 	{
