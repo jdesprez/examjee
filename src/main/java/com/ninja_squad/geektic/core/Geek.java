@@ -26,11 +26,11 @@ public class Geek
 	String prenom;
 	@Column(name="adrmail")
 	String adrMail;
-//	@ManyToMany
-//	@JoinTable(name="centreinteretgeek",
-//	joinColumns = @JoinColumn(name="idgeek"),
-//	inverseJoinColumns = @JoinColumn(name="idcentreinteret"))
-//	List<CentreInteret> listInterets;
+	@ManyToMany
+	@JoinTable(name="centreinteretgeek",
+	joinColumns = @JoinColumn(name="idgeek"),
+	inverseJoinColumns = @JoinColumn(name="idcentreinteret"))
+	List<CentreInteret> listInterets;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "genre")
@@ -103,15 +103,15 @@ public class Geek
 		this.adrMail = adrMail;
 	}
 
-//	public List<CentreInteret> getListInterets()
-//	{
-//		return listInterets;
-//	}
-//
-//	public void setListInterets(List<CentreInteret> listInterets)
-//	{
-//		this.listInterets = listInterets;
-//	}
+	public List<CentreInteret> getListInterets()
+	{
+		return listInterets;
+	}
+
+	public void setListInterets(List<CentreInteret> listInterets)
+	{
+		this.listInterets = listInterets;
+	}
 
 	public Genre getGenre()
 	{

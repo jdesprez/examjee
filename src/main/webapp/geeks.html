@@ -2,5 +2,5 @@
         
 
   <div ng-repeat="geek in geeks | filter:query | orderBy:orderProp">
-    <li>{{geek.nom}} {{geek.prenom}} </li>
+    <li><a href="/#/geeks/{{geek.id}}">{{geek.nom}} {{geek.prenom}}</a> </li>
   </div>

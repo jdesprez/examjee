@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.test.context.ContextConfiguration;
 
+import com.ninja_squad.geektic.core.CentreInteret;
 import com.ninja_squad.geektic.core.Geek;
 
 @Repository
@@ -40,11 +41,19 @@ public class GeekDao implements IGeekDao
 
 	public void persist(Geek g)
 	{
-		em.persist(g);
+		em.persist(g);	
 	}
 	
     public List<Geek> findAll(){
         String query = "SELECT g FROM geek g";
         return em.createQuery(query, Geek.class).getResultList();
+    }
+    
+    public List<Geek> findByInteret(String nomCentreInteret){
+        String query = "SELECT DISTINCT g FROM geek g JOIN g.listInterets i WHERE i.nom IN(:centreinteret)";
+
+        return em.createQuery(query, Geek.class)
+                .setParameter("centreinteret", nomCentreInteret)
+                .getResultList();
     }
 }
