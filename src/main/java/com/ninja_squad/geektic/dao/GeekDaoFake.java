@@ -1,10 +1,7 @@
 package com.ninja_squad.geektic.dao;
 
-import java.util.ArrayList;
-
 import com.ninja_squad.geektic.core.CentreInteret;
 import com.ninja_squad.geektic.core.Geek;
-import com.ninja_squad.geektic.core.Genre;
 
 public class GeekDaoFake implements IGeekDao
 {
@@ -15,7 +12,7 @@ public class GeekDaoFake implements IGeekDao
 		Geek g = null;
 		if (id == 22)
 		{
-			g = new Geek("Nom", "Prenom", "toto@gmail.com", Genre.HOMME);
+			g = new Geek("Nom", "Prenom", "toto@gmail.com", "HOMME");
 
 			g.setId(22L);
 			

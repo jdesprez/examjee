@@ -17,6 +17,7 @@ public class CommonOperations {
                             .columns("id", "nom", "prenom", "adrmail", "genre")
                             .values(1L, "des", "jrme", "jrmedesprez@gmail.com", "HOMME")
                             .values(2L, "toto", "titi", "toto.titi@gmail.com", "FEMME")
+                            .values(3L, "Unautre", "homme", "homme@gmail.com", "HOMME")
                             .build());
     
     public static final Operation INSERT_PREFENRENCE_DATA =
@@ -32,5 +33,6 @@ public class CommonOperations {
                             .values(1L, 1L)
                             .values(2L, 1L)
                             .values(2L, 2L)
+                            .values(1L, 3L)
                             .build());
 };

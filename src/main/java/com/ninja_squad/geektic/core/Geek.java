@@ -20,6 +20,7 @@ public class Geek
 	@Column(name="id")
 	@GeneratedValue
 	private Long id;
+	
 	@Column(name="nom")
 	String nom;
 	@Column(name="prenom")
@@ -32,19 +33,24 @@ public class Geek
 	inverseJoinColumns = @JoinColumn(name="idcentreinteret"))
 	List<CentreInteret> listInterets;
 	
-	@Enumerated(EnumType.STRING)
+//	@Enumerated(EnumType.STRING)
+//	@Column(name = "genre")
+//	Genre genre;	
+//	
+	
 	@Column(name = "genre")
-	Genre genre;	
+	String genre;	
 	
 	public Geek()
 	{
 		this.nom = "na";
 		this.prenom = "na";
 		this.adrMail = "na";
-		this.genre = Genre.HOMME;
+		//this.genre = Genre.HOMME;
+		this.genre = "na";
 	}
 	
-	public Geek(String nom, String prenom, String adrMail, Genre genre)
+	public Geek(String nom, String prenom, String adrMail, String genre)
 	{
 		super();
 		this.nom = nom;
@@ -113,12 +119,12 @@ public class Geek
 		this.listInterets = listInterets;
 	}
 
-	public Genre getGenre()
+	public String getGenre()
 	{
 		return genre;
 	}
 
-	public void setGenre(Genre genre)
+	public void setGenre(String genre)
 	{
 		this.genre = genre;
 	}	

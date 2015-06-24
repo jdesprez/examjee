@@ -55,6 +55,7 @@ public class GeekDaoTest extends BaseDaoTest {
     	List<Long> expected = new ArrayList<>();
     	expected.add(1L);
     	expected.add(2L);
+    	expected.add(3L);
     	Collections.sort(expected);
     	
     	List<Geek> listGeeks = geekDao.findAll();
@@ -69,16 +70,64 @@ public class GeekDaoTest extends BaseDaoTest {
     @Test
     public void findByCentreInteret()
     {
-    	CentreInteret ci = new CentreInteret();
-    	ci.setId(1L);
-    	ci.setNom("C#");
-    	
         List<Long> expected = new ArrayList<>();
     	expected.add(1L);
     	expected.add(2L);
     	Collections.sort(expected);
     	
     	List<Geek> listGeeks = geekDao.findByInteret("C#");
+    	List<Long> response = new ArrayList<>();
+    	for(Geek g : listGeeks)
+    		response.add(g.getId());
+    	Collections.sort(response);
+    	
+    	assertEquals(expected, response);
+    }
+    
+    @Test
+    public void findByGenreTest()
+    {
+      	List<Long> expected = new ArrayList<>();
+    	expected.add(1L);
+    	expected.add(3L);
+    	
+    	Genre genre = Genre.HOMME;
+    	
+    	List<Geek> listGeeks = geekDao.findByGenre(genre);
+    	List<Long> response = new ArrayList<>();
+    	for(Geek g : listGeeks)
+    		response.add(g.getId());
+    	
+    	assertEquals(expected, response);
+    }
+    
+    @Test
+    public void findByGenreAndInterestTest()
+    {
+      	List<Long> expected = new ArrayList<>();
+    	expected.add(1L);
+    	
+    	Genre genre = Genre.HOMME;
+    	
+    	List<Geek> listGeeks = geekDao.findByGenreAndInterest(genre, "C#");
+    	List<Long> response = new ArrayList<>();
+    	for(Geek g : listGeeks)
+    		response.add(g.getId());
+    	
+    	assertEquals(expected, response);
+    }
+    
+    @Test
+    public void findByGenreAndInterestTest2()
+    {
+      	List<Long> expected = new ArrayList<>();
+    	expected.add(1L);
+    	expected.add(3L);
+    	Collections.sort(expected);
+    	
+    	Genre genre = Genre.HOMME;
+    	
+    	List<Geek> listGeeks = geekDao.findByGenreAndInterest(genre, "Java");
     	List<Long> response = new ArrayList<>();
     	for(Geek g : listGeeks)
     		response.add(g.getId());

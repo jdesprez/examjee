@@ -10,6 +10,9 @@ app.config([ '$routeProvider', function($routeProvider) {
 	}).when('/geeks/:geekid', {
 		templateUrl : 'geekdetails.html',
 		controller : 'GeekCtrl'
+	}).when('/search', {
+		templateUrl : 'search.html',
+		controller : 'searchCtrl'
 	}).otherwise({
 		redirectTo : '/hello'
 	});
@@ -39,6 +42,12 @@ app.controller('GeekCtrl', [
 						$scope.geek = listGeeksDisplay
 					})
 		} ]);
+
+app.controller('searchCtrl', function($scope, $http) {
+	$http.get('/api/listci').success(function(listGeeksDisplay) {
+		$scope.centreinterets = listGeeksDisplay
+	})
+});
 
 //app.controller('GeekCtrl',[ '$scope', '$routeParams', '$http',
 //function($scope, $routeParams, $http) {
